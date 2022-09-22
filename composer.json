@@ -1,0 +1,27 @@
+{
+    "name": "jawa/api",
+    "description": "This package provide basic middleware and error handler  for laravel api project",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jawa\\Api\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    
+    "authors": [
+        {
+            "name": "jawa5",
+            "email": "shriba.jawa5@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/framework": "9.x-dev",
+        "laravel/sanctum": "4.x-dev",
+        "symfony/http-foundation": "6.0.x-dev"
+    }
+}
