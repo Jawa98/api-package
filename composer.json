@@ -20,7 +20,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "laravel/framework": "9.x-dev",
+        "laravel/framework": "8.x-dev",
         "laravel/sanctum": "4.x-dev",
         "symfony/http-foundation": "6.0.x-dev"
     }
