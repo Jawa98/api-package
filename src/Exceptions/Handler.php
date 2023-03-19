@@ -17,23 +17,22 @@ class Handler extends ExceptionHandler
         if($request->wantsJson())
         {
             if ($exception instanceof MethodNotAllowedHttpException) {
-                return response()->json(['message' =>
-                 'Method not allowed.'], 405);
+                return response()->json(['error' => 'Method not allowed.', 'message' => $exception->getMessage()], 405);
             }
             if ($exception instanceof NotFoundHttpException) {
-                return response()->json(['message' => 'Not found.'], 404);
+                return response()->json(['error' => 'Not found.', 'message' => $exception->getMessage()], 404);
             }
             if ($exception instanceof ModelNotFoundException) {
-                return response()->json(['message' => 'Model not found.'], 404);
+                return response()->json(['error' => 'Model not found.', 'message' => $exception->getMessage()], 404);
             }
             if ($exception instanceof AuthorizationException) {
-                return response()->json(['message' => 'Forbidden.'], 403);
+                return response()->json(['error' => 'Forbidden.', 'message' => $exception->getMessage()], 403);
             }
             if ($exception instanceof BadRequestException) {
-                return response()->json(['message' => 'Bad Request.'], 400);
+                return response()->json(['error' => 'Bad Request.', 'message' => $exception->getMessage()], 400);
             }
             if ($exception instanceof HttpException) {
-                return response()->json($exception->getMessage(), $exception->getStatusCode());
+                return response()->json(['error' => 'Http Exception.', 'message' => $exception->getMessage()], $exception->getStatusCode());
             }
         }
         return parent::render($request,$exception);
