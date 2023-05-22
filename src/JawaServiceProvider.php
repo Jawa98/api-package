@@ -4,7 +4,7 @@ namespace Jawa\Api;
 
 use Illuminate\Support\ServiceProvider;
 
-class ApiServiceProvider extends ServiceProvider
+class JawaServiceProvider extends ServiceProvider
 {
     public function boot()
     {
