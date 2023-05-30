@@ -23,7 +23,7 @@ if(!function_exists('upload_file'))
     function upload_file($request_file, $prefix, $folder_name)
     {
         $extension = $request_file->getClientOriginalExtension();
-        $file_to_store = $prefix . '_' . time() . '.' . $extension;
+        $file_to_store = $prefix . '_' . time(). rand(1000, 9999) . '.' . $extension;
         $request_file->storeAs('public/' . $folder_name, $file_to_store);
         return $folder_name.'/'.$file_to_store;
     }
